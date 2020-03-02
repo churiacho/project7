@@ -1,15 +1,21 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'active_storage/engine'
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Bikerace
+module Moveandgroove
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
+    config.assets.initialize_on_precompile = false
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

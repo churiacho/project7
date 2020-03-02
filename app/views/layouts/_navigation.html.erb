@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary nav-fill nav-justified mb-0">
+
+    <%= link_to show_img('fitness.svg'), root_path, class: "navbar-brand" %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navcontrol"
+        aria-controls="navcontrol" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navcontrol">
+        <span class="navbar-nav mr-auto mt-2 mt-md-0">
+        </span>
+
+        <%= link_to "Home", root_path, class: "nav-link nav-lnk col-lg-2" %>
+
+        <% if user_signed_in? %>
+            <%= link_to "Activities", activities_path, class: "nav-link nav-lnk col-lg-2" %>
+
+
+            <div class="nav-item dropdown col-lg-2">
+                <% if has_avatar? %>
+                    <%= link_to root_path, id: "navbar-dropdown", class: "nav-link nav-lnk dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: true, expanded: false } do %>
+                        <%= image_tag current_user.avatar, id: "avatar" %><%= current_user.first_name %>
+                    <% end %>
+                <% else %>
+                    <%= link_to current_user.first_name, root_path, id: "navbar-dropdown", class: "nav-link nav-lnk dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: true, expanded: false } %>
+                <% end %>
+                <div class="dropdown-menu w-100 bg-primary" aria-labelledby="navbar-dropdown">
+                    <%= link_to "Profile", users_path, class: "dropdown-item text-align-center nav-lnk" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to "Sign Out",  destroy_user_session_path, class: "dropdown-item text-align-center nav-lnk" %>
+                </div>
+
+
+            <% else %>
+                <%= link_to "Sign In", new_user_session_path, class: "nav-link nav-lnk col-md-2" %>
+                <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "nav-link nav-lnk col-2" %>
+            <% end %>
+
+
+        </div>
+</nav>

@@ -1,0 +1,8 @@
+def correct_user
+    @post = Activity.find_by(id: params[:id])  // find the post
+    unless current_user?(@activity.user)
+        redirect_to user_path(current_user)
+    end
+  end
+
+  before_action :correct_user, only: [:create, :show, :edit, :update, :destroy]

@@ -1,0 +1,314 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+//General styles
+
+.jumbotron {
+    text-align: center;
+    background-color: rgb(135, 253, 202) !important;
+}
+
+footer {
+    margin: 2rem 0 0 0;  
+    width: 100%;  
+    background-color: rgb(46, 31, 154) !important;
+    padding: 0 !important;
+}
+
+header {
+    margin: 0;
+}
+
+#avatar {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    object-fit: scale-down;
+
+}
+
+// Navigation styles
+
+.dropdown-item {
+    color: white !important;
+    font-size: 0.8em !important;
+    &:hover {
+        color: black !important;
+    }
+}
+
+.navbar-brand {
+    color: white !important;
+    margin: 0;
+    
+    &:hover {
+        background-color: transparent;
+        color: black !important;
+    }
+    svg {
+        fill: white;
+        height: 2em;
+        margin: 0;
+        &:hover {
+            fill: black;
+        }
+    }
+}
+
+.navbar {
+    padding: 0;
+    width: 100%;
+    #avatar {
+        width: 2em;
+        height: 100%;
+        margin: 0 25% 0 0;
+    }
+    .nav-link {
+        height: 100%;
+    }
+}
+
+// Link styles
+#lnk-green {
+    color: green;
+    &:hover {
+        color: white;
+    }
+}
+
+#lnk-theme {
+    color: rgb(66, 176, 159);
+    &:hover {
+        color: white;
+    }
+}
+
+#del {
+    color: red;
+    padding: 0.1rem 0.3rem;
+    border: 1px solid red;
+    border-radius: 15px;
+    background-color: white;
+    &:hover {
+        color: white;
+        background-color: red;
+        text-decoration: none;
+        transition: 0.2s ease;
+    }
+}
+
+#lnk-yellow {
+    color: orange;
+    padding: 0.1rem 0.3rem;
+    border: 1px solid orange;
+    border-radius: 15px;
+    background-color: white;
+    &:hover {
+        color: white;
+        background-color: orange;
+        text-decoration: none;
+        transition: 0.2s ease;
+    }
+}
+.nav-lnk {
+    color: hsl(0, 0%, 100%) !important;
+    // padding: 0.5em !important;
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    &:hover {
+        background-color: white !important;
+        color: black !important;
+    }
+}
+
+#btn-yel {
+    color: orange;
+    &:hover {
+        color: white;
+    }
+}
+
+// Devise pages styles
+#container {
+    height: 100%;
+    min-height: 56vh;
+}
+
+// Home Page Views
+
+#home {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+}
+
+#home-card-img {
+    object-fit: cover !important;
+    height: 100%;
+}
+
+#move-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+#home-card {
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+.card-img-overlay {
+    background-color: black;
+    opacity: 0.7;
+}
+
+// Activity Views Styles
+
+#activity-form {
+    background-color: pink;
+}
+
+#activity-container {
+    background-color: blueviolet;
+}
+
+#activity-table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid grey;
+
+    th {
+        font-size: 1.3rem;
+        padding: 1em 0;
+        border-bottom: 1px solid grey;
+    }
+
+    td {
+        padding: 1em 0;
+    }
+
+    #overlay {
+        background-color: rgba(176, 224, 245, 0.517);
+        border-bottom: 1px solid grey;
+
+        &:hover {
+            background-color: rgba(176, 224, 245, 0.7);
+        }
+    }
+
+    #activity-change {
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+        padding: none;
+ 
+    }
+}
+#act-show-jumbo {
+    background-color: rgb(83, 223, 99) !important;
+}
+
+#act-new-jumbo {
+    background-color: rgba(108, 86, 238, 0.748) !important;
+}
+
+#act-edit-jumbo {
+    background-color: rgb(245, 183, 89) !important;
+}
+
+// Profile Page styles
+
+
+// Media Queries
+
+@media only screen and (max-width: 1415px) {
+    #home-card {
+        .card-text {
+           margin: 0.5rem !important;
+           padding: 0.5rem !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    #home-card {
+        margin: 1rem !important;
+    }
+    .display-4 {
+        font-size: 2rem !important;
+    }
+    .display-2 {
+        font-size: 3rem !important;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .display-2 {
+        font-size: 2rem !important;
+    }
+    .display-4 {
+        font-size: 1rem !important;
+    }
+    .footer {
+        margin: 0 !important;
+    }
+    #home-card {
+        margin: 0 !important;
+        height: 50vh;
+        .card-title {
+            margin: 0 !important;
+            padding: none !important;
+        }
+        .card-text {
+            margin: 0 !important;
+            padding: none !important;   
+        }
+        .btn-lg {
+            font-size: 0.8rem !important;
+        }
+    }
+    .profile {
+        h1 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px){
+    #act-index {
+        padding: none !important;
+        margin: 0 !important;
+    }
+    #activity-table {
+        margin: 0 !important;
+        padding: none !important;
+    }
+}
+
+@media only screen and (max-width: 355px) {
+    .display-2 {
+        font-size: 2em !important;
+    }
+
+    .display-4 {
+        font-size: 1.5em !important;
+    }
+    th {
+        font-size: 1em !important;
+        font-weight: 7 !important;
+    }
+    td {
+        font-weight: 4 !important;
+        padding: 0.3rem 0 !important;
+    }
+    #lnk-yellow {
+        margin-bottom: 2rem !important;
+    }
+
+    #home {
+        height: 30vh;
+    }
+}

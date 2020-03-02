@@ -1,0 +1,37 @@
+<div class="container d-flex justify-content-center pb-5">
+<%= form_with(model: activity, local: true) do |form| %>
+  <% if activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+      <ul>
+        <% activity.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+
+  <div class="form-group">
+    
+    <%= form.select :name, Activity.names.keys.map, prompt: "Please select an activity", class: "form-field" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Date" %>
+    <%= form.date_select :date_field %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Duration" %>
+    <%= form.number_field :duration_minutes, min: 1, max: 1440 %> minutes
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>

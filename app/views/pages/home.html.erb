@@ -1,0 +1,24 @@
+    <div class="jumbotron jumbotron-fluid" id="home">
+        <%= image_tag("4.jpg", class: "w-100", id: "move-img", alt: "Welcome to Move and Groove") %>
+    </div>
+<div class="row my-0 mx-0 px-0">
+
+
+            <div class="card bg-dark text-white m-5 px-0 text-right" id="home-card">
+                <%= image_tag("2.jpg", class: "card-img-top", id: "home-card-img", alt: "Active woman") %>
+                <div class="card-img-overlay">
+                    <h1 class="card-title display-2">Keep track of your activity</h1>
+                    <h2 class="card-text my-5 py-5 offset-4 display-4">On Move and Groove, you can keep track of your daily activities right here, online. When ever, where ever.</h2>
+                    <% if user_signed_in? %>
+                        <%= link_to "Log your activity for the day", new_activity_path, class: "btn btn-outline-info btn-lg", id: "lnk-theme" %>
+                    <% else %>
+                        <%= link_to "Start logging your activity", new_user_session_path, method: :go, class: "btn btn-outline-info btn-lg", id: "lnk-theme" %>
+                    <% end %>
+                </div>
+            </div>
+
+
+
+</div>
+
+

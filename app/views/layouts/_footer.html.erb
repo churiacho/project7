@@ -1,0 +1,16 @@
+    <ul class="nav w-100 flex-fluid justify-content-between align-items-end">
+    <div class="row">
+        <li class="nav-item ml-3"><%= link_to show_img('fitness.svg'), root_path, class: "navbar-brand" %></li>
+        </div>
+            <div class="row justify-content-around mr-3">
+        <% if user_signed_in? %>
+            <li class="nav-item"><%= link_to "Your activity log", activities_path, class: "nav-link nav-lnk" %></li>
+            <li class="nav-item"><%= link_to "View your profile", users_path, class: "nav-link nav-lnk" %></li>
+            <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, class: "nav-link nav-lnk" %></li>
+        <% else %>
+            <li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: "nav-link nav-lnk" %></li>
+            <li class="nav-item"><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "nav-link nav-lnk" %></li>
+            <li></li>
+        <% end %>
+        </div>
+    </ul>

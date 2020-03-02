@@ -1,0 +1,40 @@
+<div class="jumbotron jumbotron-fluid display-2">
+      Activities
+    </div>
+<div class=" container" id="container">
+    <table class="container" id="activity-table">
+      <thead class="jumbotron">
+        <tr>
+          <th>Activity</th>
+          <th>Date</th>
+          <th>Duration</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <% @activities.each do |activity| %>
+
+        <tr id="overlay">
+          <td><%=  activity.name %></td>
+          <td><%=  activity.date_field.to_formatted_s(:rfc822) %></td>
+          <td>
+            <%=  activity.duration_minutes %> minutes
+          </td>
+          <td id="activity-change">
+            <%= link_to 'Edit', edit_activity_path(activity), id: 'lnk-yellow' %>
+            <%= link_to 'x', activity, method: :delete, data: { confirm: 'Are you sure?' }, id:'del' %>
+          </td>
+
+        </tr>
+
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <span><%= link_to 'New Activity', new_activity_path, class: "btn btn-outline-success", id: 'lnk-green' %></span>
+  </div>

@@ -1,0 +1,34 @@
+<h2 class="jumbotron">Sign In</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+<div class="container col-4 offset-4 justify-content-center" id="container">
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input col-12" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: "col-12" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit value: "Sign In", class: 'btn btn-block btn-primary'  %><br />
+  </div>
+  <div class="col-8 container">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+<% end %>
+
+
+

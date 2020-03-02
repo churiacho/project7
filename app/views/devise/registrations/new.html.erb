@@ -1,0 +1,50 @@
+<div class="jumbotron">
+  <h2>Sign up</h2><%# heading text-4xl font-bold pt-4 mb-8 %>
+</div>
+<div class="container container-fluid" id="container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :post, multipart: true }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="col-4 offset-4">
+    <div class="field"><%# mb-6 %>
+      <%= f.label :first_name, class:"label" %><br />
+      <%= f.text_field :first_name, autofocus: true, class:"input col-12" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name, class:"label" %><br />
+      <%= f.text_field :last_name, autofocus: true, class:"input col-12" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-12" %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Avatar" %>
+      <%= f.file_field :avatar %><br />
+    
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "col-12" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-12" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit class: 'btn btn-block btn-primary', value: "Create Account" %>
+    </div>
+  <% end %>
+
+  <div class="container col-8" >
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

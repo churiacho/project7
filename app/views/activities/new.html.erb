@@ -1,0 +1,7 @@
+<div class="jumbotron jumbotron-fluid display-2" id="act-new-jumbo">Add Activity</div>
+<div class="container my-auto" id="container">
+<div class="container py-5">
+    <%= render 'form', activity: @activity %>
+
+    <%= link_to 'Activity Diary', activities_path, class: "btn btn-outline-info", id: "lnk-theme" %>
+</div>

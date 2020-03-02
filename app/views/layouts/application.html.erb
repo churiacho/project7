@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bikerace</title>
+    <title>Move and Groove</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag 'custom'%>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/devise_notices' %>
+    </header>
+    <main>
+    <div class="main">
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    </div>
+    </main>
+    <footer class="p-1">
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>

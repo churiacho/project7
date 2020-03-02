@@ -1,0 +1,15 @@
+<div class="jumbotron jumbotron-fluid display-2" id="act-show-jumbo">
+  <%= @activity.date_field.to_formatted_s(:long) %>
+</div>
+<div class="container my-auto" id="container">
+
+<div class="jumbotron d-flex flex-wrap justify-content-around display-4 p-5">
+
+ <span> <%= @activity.name %></span><span> for </span><span><%= @activity.duration_minutes %> minutes</span>
+
+</div>
+
+<%= link_to 'Edit', edit_activity_path(@activity), class: "btn btn-outline-warning", id: "btn-yel" %>
+<%= link_to 'Back', activities_path, class: "btn btn-outline-info", id: "lnk-theme" %>
+</div>
+</div>

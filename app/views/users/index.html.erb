@@ -1,0 +1,62 @@
+
+<div class="jumbotron mt-auto display-2 jumbotron-fluid"><%= @user.first_name %> <%= @user.last_name %>'s Account</div>
+<div class="container my-auto profile" id="container">
+  <div class="row">
+    
+    <div class="card col-lg-3 offset-lg-0 col-md-6 offset-md-3">
+
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, class: "card-body p-0", id: "avatar" %>
+      <% else %>
+        <h1 class="text-center">No avatar uploaded</h1>
+      <% end %>
+
+    </div>
+
+    <div class="col-lg-9">
+
+    
+
+        <div class="card text-center">
+          <div class="card-header">
+            <h1 class="card-title display-4">About me</h1>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= @user.bio %></p>
+          </div>
+        </div>
+
+      
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-3 my-4">
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">Name</th>
+            <td><%= @user.first_name %> <%= @user.last_name %></td>
+          </tr>
+          <tr>
+            <th scope="row">Age</th>
+            <td><%= @user.age %></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+  
+  <div class="row">
+    <%= link_to "Edit account details", edit_user_profile_path(@user), class: "btn btn-outline-warning offset-lg-4", id: "btn-yel" %>
+  </div>
+
+
+  
+</div>
